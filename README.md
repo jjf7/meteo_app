@@ -1,16 +1,8 @@
-# weather_app
+# Aplicación del tiempo por Jose Fuentes.
 
-A new Flutter project.
+Un proyecto elaborado en Flutter consumiendo la api de OpenWeatherMap (https://openweathermap.org/api).
+He elaborado esta aplicación siguiendo las buenas prácticas y código limpio, no he usado ningún paquete de gestión de estados, en su defecto use Inherited widget para la gestión de estado.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+los paquetes de terceros usados para este test son dos:
+-Dio (peticiones HTTP)
+-Intl (librería relacionada con la internalización y formatos (números, monedas, fechas etc.)

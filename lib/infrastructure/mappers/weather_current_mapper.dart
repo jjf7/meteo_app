@@ -25,9 +25,9 @@ class WeatherCurrentMapper {
         date: date,
         description: description,
         icon: "$urlIcon$icon@2x.png",
-        temp: temp,
-        tempMin: tempMin,
-        tempMax: tempMax,
+        temp: temp.toDouble(),
+        tempMin: tempMin.toDouble(),
+        tempMax: tempMax.toDouble(),
       ));
     }
 
