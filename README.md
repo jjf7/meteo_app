@@ -10,3 +10,6 @@ los paquetes de terceros usados para este test son dos:
 Imagenes de la app:
 
 ![imagen 1](http://jfdesousa.com/img/1.jpg)
+![imagen 2](http://jfdesousa.com/img/2.jpg)
+![imagen 3](http://jfdesousa.com/img/3.jpg)
+![imagen 4](http://jfdesousa.com/img/4.jpg)
