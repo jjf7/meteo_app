@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/config/config.dart';
 
 import '../providers/location_inherited_widget.dart';
 
@@ -29,32 +30,12 @@ class _SideMenuState extends State<SideMenu> {
             navDrawerIndex = value;
           });
 
+          // reset el active de pronostico extendido
           myLocation.isActiveMoreDataNotifier.value =
               !myLocation.isActiveMoreDataNotifier.value;
-          switch (value) {
-            case 0:
-              myLocation.myLocationNotifier.value = 'caracas';
-            case 1:
-              myLocation.myLocationNotifier.value = 'madrid';
-            case 2:
-              myLocation.myLocationNotifier.value = 'bogota';
-            case 3:
-              myLocation.myLocationNotifier.value = 'lisboa';
-            case 4:
-              myLocation.myLocationNotifier.value = 'ciudad de panama';
-            case 5:
-              myLocation.myLocationNotifier.value = 'ciudad de mexico';
-            case 6:
-              myLocation.myLocationNotifier.value = 'buenos aires';
-            case 7:
-              myLocation.myLocationNotifier.value = 'maturin';
-            case 8:
-              myLocation.myLocationNotifier.value = 'miami';
-            case 9:
-              myLocation.myLocationNotifier.value = 'new york';
-            case 10:
-              myLocation.myLocationNotifier.value = 'california';
-          }
+
+          // asignar al notifier la ciudad seleccionada
+          myLocation.myLocationNotifier.value = cities[value];
 
           Future.delayed(
             const Duration(milliseconds: 500),
@@ -78,50 +59,12 @@ class _SideMenuState extends State<SideMenu> {
             padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
             child: Divider(),
           ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Caracas'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Madrid'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Bogota'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Lisboa'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Ciudad de Panama'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Ciudad de Mexico'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Buenos Aires'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Maturin'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('Miami'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('New York'),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            label: Text('California'),
-          ),
+          ...cities
+              .map((city) => NavigationDrawerDestination(
+                    icon: const Icon(Icons.arrow_circle_right_outlined),
+                    label: Text(city),
+                  ))
+              .toList()
         ]);
   }
 }
