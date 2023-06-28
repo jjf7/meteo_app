@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/widgets.dart';
 import 'shared.dart';
 
 class DialogBox extends StatelessWidget {

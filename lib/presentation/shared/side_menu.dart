@@ -62,7 +62,7 @@ class _SideMenuState extends State<SideMenu> {
           ...cities
               .map((city) => NavigationDrawerDestination(
                     icon: const Icon(Icons.arrow_circle_right_outlined),
-                    label: Text(city),
+                    label: Text(city.replaceRange(0, 1, city[0].toUpperCase())),
                   ))
               .toList()
         ]);
