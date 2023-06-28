@@ -6,3 +6,7 @@ He elaborado esta aplicación siguiendo las buenas prácticas y código limpio, 
 los paquetes de terceros usados para este test son dos:
 -Dio (peticiones HTTP)
 -Intl (librería relacionada con la internalización y formatos (números, monedas, fechas etc.)
+
+Imagenes de la app:
+
+![imagen 1](http://jfdesousa.com/img/1.jpg)
