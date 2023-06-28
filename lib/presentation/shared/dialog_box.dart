@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets.dart';
+import '../widgets/widgets.dart';
+import 'shared.dart';
 
 class DialogBox extends StatelessWidget {
   final TextEditingController controller;

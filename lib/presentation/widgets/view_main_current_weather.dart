@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/config/config.dart';
+import 'package:weather_app/presentation/widgets/widgets.dart';
 
 class ViewMainCurrentWeather extends StatelessWidget {
   final String icon;
@@ -35,20 +35,7 @@ class ViewMainCurrentWeather extends StatelessWidget {
               city,
               style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
-            FutureBuilder(
-              future: HumanFormats.date(date),
-              builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-                if (snapshot.hasData) {
-                  return Text(
-                    snapshot.data!,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                  );
-                }
-
-                return const SizedBox.shrink();
-              },
-            ),
+            FormatDateWidget(date: date),
             Image.network(
               icon,
               loadingBuilder: (context, child, loadingProgress) {

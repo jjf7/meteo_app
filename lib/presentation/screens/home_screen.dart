@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:weather_app/infrastructure/repositories/weather_repository_impl.dart';
+import 'package:weather_app/presentation/shared/shared.dart';
 import '../../infrastructure/datasources/weather_datasource_impl.dart';
 import '../providers/providers.dart';
 import '../widgets/widgets.dart';

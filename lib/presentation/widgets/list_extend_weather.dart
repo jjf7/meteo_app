@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/config/config.dart';
 import 'package:weather_app/domain/domain.dart';
 
 import 'widgets.dart';

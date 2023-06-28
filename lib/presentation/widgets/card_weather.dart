@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/config/config.dart';
 import 'package:weather_app/domain/entities/weather.dart';
+import 'package:weather_app/presentation/widgets/widgets.dart';
 
 class CardWeather extends StatelessWidget {
   final WeatherElement weather;
@@ -18,29 +18,20 @@ class CardWeather extends StatelessWidget {
       color: Colors.primaries[index * 3 % list.length].withOpacity(0.7),
       child: Column(
         children: [
-          FutureBuilder(
-            future: HumanFormats.date(weather.date),
-            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-              if (snapshot.hasData) {
-                return Text(
-                  snapshot.data!,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                );
-              }
-
-              return const SizedBox.shrink();
-            },
-          ),
+          FormatDateWidget(date: weather.date),
           Text(
             weather.description
                 .replaceRange(0, 1, weather.description[0].toUpperCase()),
+            style: const TextStyle(color: Colors.white),
           ),
           Image.network(weather.icon),
-          Text("Temp.Min ${weather.tempMin.toString()}°"),
+          Text("Temp.Min ${weather.tempMin.toString()}°",
+              style: const TextStyle(color: Colors.white)),
           const SizedBox(
             height: 10,
           ),
-          Text("Temp.Max ${weather.tempMax.toString()}°"),
+          Text("Temp.Max ${weather.tempMax.toString()}°",
+              style: const TextStyle(color: Colors.white)),
         ],
       ),
     );
